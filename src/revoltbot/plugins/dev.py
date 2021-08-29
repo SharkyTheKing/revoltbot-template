@@ -1,5 +1,5 @@
-from ext import commands
-from ext.objects import Context, Message
+from revoltbot.ext import commands
+from revoltbot.ext.objects import Context, Message
 
 from mutiny import events
 

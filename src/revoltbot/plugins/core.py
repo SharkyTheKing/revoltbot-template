@@ -1,5 +1,5 @@
-from ext import commands
-from ext.objects import Context
+from revoltbot.ext import commands
+from revoltbot.ext.objects import Context
 
 import aiohttp
 import json
@@ -7,6 +7,7 @@ import io
 import time
 import platform
 import mutiny
+
 
 class Core(commands.Plugin):
 

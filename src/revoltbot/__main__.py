@@ -166,7 +166,7 @@ async def help(ctx):
 async def load(ctx, plugin: str):
     """Load a plugin."""
     try:
-        await bot.load_plugin(f"plugins.{plugin}")
+        await bot.load_plugin(f"revoltbot.plugins.{plugin}")
     except errors.PluginError as e:
         await ctx.channel.send(f"Error: {e}")
     else:
@@ -189,7 +189,7 @@ async def reload(ctx, plugin: str):
     """Reload a plugin."""
     try:
         await bot.unload_plugin(plugin)
-        await bot.load_plugin(f"plugins.{plugin}")
+        await bot.load_plugin(f"revoltbot.plugins.{plugin}")
     except errors.PluginError as e:
         await ctx.channel.send(f"Error: {e}")
     else:

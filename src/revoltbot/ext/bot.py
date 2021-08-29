@@ -10,9 +10,9 @@ from ulid import monotonic as ulid
 
 import mutiny
 from mutiny._internal.client import Client
-from . import commands
-from . import objects
-from . import errors
+from revoltbot.ext import commands
+from revoltbot.ext import objects
+from revoltbot.ext import errors
 
 
 class Bot(Client):
@@ -31,12 +31,12 @@ class Bot(Client):
             if file.endswith(".py"):
                 name = file[:-3]
                 try:
-                    await asyncio.wait_for(self.load_plugin(f"plugins.{name}"), 30)
+                    await asyncio.wait_for(self.load_plugin(f"revoltbot.plugins.{name}"), 30)
                 except asyncio.TimeoutError:
                     print(f'Failed to load extension {name} (timeout)')
                 except Exception as e:
                     print(e)
-        
+
         await super().start()
 
     async def close(self):
